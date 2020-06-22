@@ -13,7 +13,7 @@ const toyController = require('./controller/toyController');
 var app = express();
 
 app.use(bodyParser.urlencoded({
-    extended:true
+    extended:false
 }));
 
 app.use(bodyParser.json());
@@ -28,9 +28,9 @@ app.engine('hbs',expressHandlebars({
 
 app.set('view engine','hbs');
 
-app.listen(process.env.PORT || 5000,() => {
+app.listen(process.env.PORT || 1000,() => {
     console.log("Server is listening on Port 5000");
 })
 
-app.use('/toy',toyController);
+app.use('/',toyController);
 
