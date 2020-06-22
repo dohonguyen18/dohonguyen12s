@@ -36,7 +36,7 @@ function insertRecord(req,res)
 
    toy.save((err,doc) => {
        if(!err){
-        res.redirect('toy/list');
+        res.redirect('/list');
        }
        else{
            
